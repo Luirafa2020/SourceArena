@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SourceArena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logo" style="width: 60px; height: 60px;">
+        <h1>SourceArena</h1>
+    </header>
+
+    <div class="container">
+
+        <section class="featured-game" id="featuredGame">
+            <!-- Conteúdo do jogo em destaque será inserido pelo JavaScript -->
+        </section>
+
+        <div class="controls">
+             <div class="control-group">
+                <label for="searchInput" aria-label="Pesquisar por nome">Pesquisar:</label>
+                <input type="search" id="searchInput" placeholder="Digite o nome do jogo...">
+            </div>
+             <div class="control-group">
+                <label for="genreFilter" aria-label="Filtrar por gênero">Gênero:</label>
+                <select id="genreFilter">
+                    <option value="">Todos os Gêneros</option>
+                    <!-- Opções de gênero serão inseridas pelo JavaScript -->
+                </select>
+            </div>
+             <div class="control-group">
+                 <label for="platformFilter" aria-label="Filtrar por plataforma">Plataforma:</label>
+                 <select id="platformFilter">
+                     <option value="">Todas as Plataformas</option>
+                     <!-- Opções de plataforma serão inseridas pelo JavaScript -->
+                 </select>
+             </div>
+              <div class="control-group">
+                <label for="sortOrder" aria-label="Ordenar jogos">Ordenar por:</label>
+                <select id="sortOrder">
+                    <option value="title-asc">Título (A-Z)</option>
+                    <option value="title-desc">Título (Z-A)</option>
+                </select>
+            </div>
+        </div>
+
+        <main>
+            <div class="game-grid" id="gameGrid">
+                <!-- Cards dos jogos serão inseridos pelo JavaScript -->
+            </div>
+            <div id="noGamesMessage" class="no-games-message" style="display: none;">
+                Nenhum jogo encontrado com os filtros selecionados.
+            </div>
+        </main>
+    </div>
+
+    <div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()" title="Fechar (Esc)" aria-label="Fechar">×</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Imagem do Jogo">
+                <h2 id="modalTitle"></h2>
+                <div class="modal-tags">
+                     <div>
+                         <strong>Plataformas:</strong>
+                         <div class="tag-container" id="modalPlatforms"></div>
+                     </div>
+                     <div>
+                         <strong>Gêneros:</strong>
+                          <div class="tag-container" id="modalGenres"></div>
+                     </div>
+                </div>
+                <p id="modalDescription"></p>
+            </div>
+            <div class="modal-footer">
+                <a id="modalLink" href="#" class="cta-button" target="_blank" rel="noopener noreferrer">Visitar Site Oficial</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Explorando o universo vibrante dos jogos de código aberto. Feito para todas as pessoas que buscam jogos gratuitos.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
